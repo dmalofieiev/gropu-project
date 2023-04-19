@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasMany(models.Deck, { foreignKey: 'userId' });
+      this.hasMany(models.DemoStatistic, { foreignKey: 'userId' });
     }
   }
   User.init(

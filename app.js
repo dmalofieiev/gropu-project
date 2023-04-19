@@ -12,7 +12,8 @@ const dbCheck = require('./src/middlewares/dbCheck');
 const isAuth = require('./src/middlewares/isAuth');
 const deckGame = require('./src/routes/game.routes');
 
-// Require routes
+// Require route
+const secMainRoute = require('./src/routes/secMain.route');
 const registerRouter = require('./src/routes/register.routes');
 const loginRouter = require('./src/routes/login.routes');
 
@@ -47,6 +48,8 @@ app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/game', deckGame);
 
+
+app.use('/', secMainRoute);
 
 app.listen(PORT, () => {
   console.log('Server started');

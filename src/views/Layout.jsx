@@ -1,4 +1,5 @@
 const React = require('react');
+const Navbar = require('./Navbar');
 
 module.exports = function Layout({ children }) {
   return (
@@ -12,7 +13,10 @@ module.exports = function Layout({ children }) {
         <link rel="stylesheet" href="/css/game.css" />
         <title>Words</title>
       </head>
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 };
