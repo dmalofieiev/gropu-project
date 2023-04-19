@@ -1,40 +1,76 @@
 'use strict';
 
+const currentCards = [
+  {
+    userId: 1,
+    cardId: 1,
+  },
+  {
+    userId: 1,
+    cardId: 2,
+  },
+  {
+    userId: 1,
+    cardId: 3,
+  },
+  {
+    userId: 1,
+    cardId: 4,
+  },
+  {
+    userId: 1,
+    cardId: 5,
+  },
+  {
+    userId: 1,
+    cardId: 6,
+  },
+  {
+    userId: 1,
+    cardId: 21,
+  },
+  {
+    userId: 1,
+    cardId: 22,
+  },
+  {
+    userId: 1,
+    cardId: 23,
+  },
+  {
+    userId: 1,
+    cardId: 24,
+  },
+  {
+    userId: 1,
+    cardId: 25,
+  },
+  {
+    userId: 1,
+    cardId: 26,
+  },
+  {
+    userId: 1,
+    cardId: 27,
+  },
+  {
+    userId: 1,
+    cardId: 28,
+  },
+  {
+    userId: 1,
+    cardId: 29,
+  },
+  {
+    userId: 1,
+    cardId: 30,
+  },
+];
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('DemoStatistics', [
-      {
-        userId: 1,
-        deckId: 1,
-        trueCount: 0,
-      },
-      {
-        userId: 1,
-        deckId: 2,
-        trueCount: 10,
-      },
-      {
-        userId: 1,
-        deckId: 3,
-        trueCount: 5,
-      },
-      {
-        userId: 1,
-        deckId: 4,
-        trueCount: 20,
-      },
-      {
-        userId: 1,
-        deckId: 5,
-        trueCount: 3,
-      },
-      {
-        userId: 1,
-        deckId: 6,
-        trueCount: 12,
-      },
-    ]);
+    await queryInterface.bulkInsert('DemoStatistics', currentCards, {});
   },
 
   async down(queryInterface, Sequelize) {

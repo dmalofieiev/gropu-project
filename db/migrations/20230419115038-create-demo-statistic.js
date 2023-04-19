@@ -22,7 +22,16 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'Users',
+            tableName: 'Cards',
+          },
+          key: 'id',
+        },
+      },
+      deckId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'Decks',
           },
           key: 'id',
         },

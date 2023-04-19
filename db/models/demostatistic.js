@@ -11,13 +11,14 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       this.belongsTo(models.User, { foreignKey: 'userId' });
       this.belongsTo(models.Card, { foreignKey: 'cardId' });
+      this.belongsTo(models.Deck, { foreignKey: 'deckId' });
     }
   }
   DemoStatistic.init(
     {
       userId: DataTypes.INTEGER,
+      cardId: DataTypes.INTEGER,
       deckId: DataTypes.INTEGER,
-      trueCount: DataTypes.INTEGER,
     },
     {
       sequelize,
