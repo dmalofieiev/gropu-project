@@ -18,19 +18,14 @@ module.exports = {
           key: 'id',
         },
       },
-      deckId: {
+      cardId: {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'Decks',
+            tableName: 'Users',
           },
           key: 'id',
         },
-      },
-      trueCount: {
-        type: Sequelize.INTEGER,
-        defaultValue: 0,
-        allowNull: false,
       },
       createdAt: {
         allowNull: false,
