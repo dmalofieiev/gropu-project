@@ -11,6 +11,7 @@ const express = require('express');
 
 const dbCheck = require('./src/middlewares/dbCheck');
 const isAuth = require('./src/middlewares/isAuth');
+const deckGame = require('./src/routes/game.routes');
 
 // Require routes
 
@@ -43,6 +44,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(dbCheck);
 
 // Routes
+app.use('/game', deckGame);
 
 app.listen(PORT, () => {
   console.log('Server started');
