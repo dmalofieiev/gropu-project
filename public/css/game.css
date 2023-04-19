@@ -1,0 +1,117 @@
+.container-game {
+  height: 100%;
+  width: 100%;
+  perspective: 2000px;
+}
+.perspective{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition-duration: 2s;
+}
+.container-deck {
+  position: relative;
+  top: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  backface-visibility: hidden;
+  background-color: aquamarine;
+}
+.container-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px; 
+  z-index: -1;
+  transform: rotateY(180deg);
+}
+.deck-theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  height: 400px;
+  background-color: rgb(124, 55, 156);
+  color: aliceblue;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transform: scale(1);
+  transition: ease 1s;
+}
+.deck-theme:hover {
+  transform: scale(1.1);
+  transition: ease 1s;
+  background-color: rgb(172, 65, 154);
+}
+
+.word-container {
+  perspective: 2000px;
+}
+.word-perspective {
+  transform-style: preserve-3d;
+  transition-duration: 1s;
+  position: relative;
+}
+.card-theme-en {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  height: 130px;
+  background-color: rgb(124, 55, 156);
+  color: aliceblue;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  transform: scale(1);
+  transition: ease 1s;
+  backface-visibility: hidden;
+}
+.card-theme-en:hover {
+  transform: scale(1.1);
+  transition: ease 1s;
+  background-color: rgb(172, 65, 154);
+}
+.card-theme-ru {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  height: 130px;
+  background-color: rgb(92, 138, 182);
+  color: aliceblue;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px; 
+  z-index: -1;
+  transform: rotateY(180deg);
+  padding: 0px;
+  margin: 0px;
+}
+.word-stat {
+  bottom: 0px;
+  right: 18px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+}
+.word-status-true {
+  background-color: green;
+}
