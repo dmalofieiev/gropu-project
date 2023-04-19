@@ -7,8 +7,7 @@ function renderTemplate(Component, props, res, req) {
     ...props,
     ...res.app.locals,
     ...res.locals,
-    userSession: req.session || {},
-
+    // userSession: req.session || {},
   });
   const html = ReactDOMServer.renderToStaticMarkup(reactEl);
   res.write('<!DOCTYPE html>');
