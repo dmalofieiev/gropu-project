@@ -8,12 +8,12 @@ const FileStore = require('session-file-store')(session);
 
 const express = require('express');
 
-
 const dbCheck = require('./src/middlewares/dbCheck');
 const isAuth = require('./src/middlewares/isAuth');
 
 // Require routes
-
+const registerRouter = require('./src/routes/register.routes');
+const loginRouter = require('./src/routes/login.routes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -36,13 +36,14 @@ app.use('/login', (req, res, next) => {
   next();
 });
 
-
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(dbCheck);
 
 // Routes
+app.use('/register', registerRouter);
+app.use('/login', loginRouter);
 
 app.listen(PORT, () => {
   console.log('Server started');
