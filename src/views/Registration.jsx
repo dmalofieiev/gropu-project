@@ -4,15 +4,18 @@ const Layout = require('./Layout');
 module.exports = function Register(props) {
   return (
     <Layout>
-      <div className="registerDiv">
+      <div className="registerDiv reglogDiv">
         <form name="registerForm">
-          <p>User Name:</p>
+          <p className="label">User Name:</p>
           <input name="userName" type="text" placeholder="User name" />
-          <p>Email:</p>
+          <p className="label">Email:</p>
           <input name="email" type="email" placeholder="Email" />
-          <p>Password:</p>
+          <p className="label">Password:</p>
           <input name="password" type="password" placeholder="Password" />
-          <button type="submit">Sing up</button>
+          <br />
+          <button className="logregBtn regBtn" type="submit">
+            Sing up
+          </button>
         </form>
         <h3 className="userStatus"></h3>
       </div>

@@ -22,6 +22,9 @@ logForm.addEventListener('submit', async (e) => {
     } else {
       userStatus.style.visibility = 'visible';
       userStatus.innerText = result.msg;
+      setTimeout(() => {
+        userStatus.style.visibility = 'hidden';
+      }, 2000);
       document.querySelectorAll('input').forEach((el) => (el.value = ''));
     }
   } catch (error) {
