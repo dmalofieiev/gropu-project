@@ -16,8 +16,11 @@ module.exports = function Navbar({ userName }) {
           </a>
         </li>
         <li>
-          <a href="#profile" className="greeting">
-            Hello, {userName}!
+          <a href="/profile" className="greeting">
+            Hello,
+            {' '}
+            {userName}
+            !
           </a>
         </li>
         <li>
