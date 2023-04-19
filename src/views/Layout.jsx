@@ -9,6 +9,7 @@ module.exports = function Layout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/css/styles.css" />
         <link rel="stylesheet" href="/css/logreg.css" />
+        <link rel="stylesheet" href="/css/game.css" />
         <title>Words</title>
       </head>
       <body>{children}</body>

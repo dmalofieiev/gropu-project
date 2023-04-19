@@ -10,6 +10,7 @@ const express = require('express');
 
 const dbCheck = require('./src/middlewares/dbCheck');
 const isAuth = require('./src/middlewares/isAuth');
+const deckGame = require('./src/routes/game.routes');
 
 // Require routes
 const registerRouter = require('./src/routes/register.routes');
@@ -41,9 +42,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(dbCheck);
 
-// Routes
+
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
+app.use('/game', deckGame);
+
 
 app.listen(PORT, () => {
   console.log('Server started');
