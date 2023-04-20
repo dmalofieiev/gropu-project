@@ -1,18 +1,22 @@
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 li {
   display: inline;
+
 }
 
-ul {
+.navbarContainer {
+  display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: #ff8500;
+  border-bottom: 1px solid rgb(206, 146, 181);
+  box-shadow: 0 4px 20px -4px rgba(196, 62, 140, 0.8);
+  margin-bottom: 20px;
 }
 
 li a {

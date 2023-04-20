@@ -35,11 +35,13 @@ const currentCards = [
     userId: 1,
     cardId: 21,
     deckId: 2,
+
   },
   {
     userId: 1,
     cardId: 22,
     deckId: 2,
+
   },
   {
     userId: 1,

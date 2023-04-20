@@ -6,7 +6,7 @@ module.exports = function Navbar({ userName }) {
       <link rel="stylesheet" href="/css/nav.style.css" />
       <ul className="navbarList">
         <li>
-          <a href="#cards" className="cardsBtn">
+          <a href="/game" className="cardsBtn">
             Cards
           </a>
         </li>
@@ -16,8 +16,11 @@ module.exports = function Navbar({ userName }) {
           </a>
         </li>
         <li>
-          <a href="#profile" className="greeting">
-            Hello, {userName}!
+          <a href="/profile" className="greeting">
+            Hello,
+            {' '}
+            {userName}
+            !
           </a>
         </li>
         <li>

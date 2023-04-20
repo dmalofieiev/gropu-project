@@ -1,3 +1,6 @@
 body {
-  background-color: #9d4edd;
- 
+  background-color: rgb(248, 227, 248);
+} 
+p, div, li, a {
+  font-family: 'Schibsted Grotesk', sans-serif;
+}
