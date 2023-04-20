@@ -2,6 +2,8 @@ const React = require('react');
 const Layout = require('../Layout');
 
 module.exports = function ViewDeck({ userSession, clearCards, userDeckId }) {
+ console.log(userDeckId);
+ console.log(userSession.userId);
   return (
 
     <Layout userSession={userSession}>
