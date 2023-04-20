@@ -21,7 +21,10 @@ router.get('/game/card/:id', async (req, res) => {
   const { id } = req.params;
   try {
     const deckCard = await Card.findAll({ where: { deckId: id }, raw: true });
-    const deckStat = await DemoStatistic.findAll({ where: { deckId: id, userId: req.session.userId }, raw: true });
+    const deckStat = await DemoStatistic.findAll({
+      where: { deckId: id, userId: req.session.userId },
+      raw: true,
+    });
     res.json({ deckCard, deckStat });
   } catch (err) {
     console.log(err);

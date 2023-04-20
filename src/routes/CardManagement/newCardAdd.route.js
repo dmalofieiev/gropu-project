@@ -10,7 +10,6 @@ router.get('/:deckTitle', async (req, res) => {
     const deckId = deck.dataValues.id;
     const cards = await Card.findAll({ where: { deckId } });
     const clearCards = cards.map((card) => card.get({ plain: true }));
-    console.log(clearCards);
     renderTemplate(CreateNewDeck, { deckTitle, clearCards }, res, req);
   } catch (error) {
     console.log(error);
@@ -22,7 +21,6 @@ router.post('/:deckTitle', async (req, res) => {
   try {
     const deck = await Deck.findOne({ where: { title } });
     const deckId = deck.dataValues.id;
-    console.log(deckId);
     const newCard = await Card.create({ en, ru, deckId });
     const clearCard = newCard.get({ plain: true });
 

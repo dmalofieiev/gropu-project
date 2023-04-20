@@ -2,31 +2,36 @@ const React = require('react');
 const Layout = require('../Layout');
 
 module.exports = function AllCards({ userSession, clearDeckTitles }) {
+  console.log('clearDeckTitles: -------->', clearDeckTitles);
   return (
     <Layout userSession={userSession}>
-      <div className='container-new-post'>
-        <div className="addDeckDiv">
-          <form name="addDeck" className='addDeck'>
-            <select name="title" className='select-add-deck'>
-              {clearDeckTitles.map((el) => (
-                <option key={el.id} value={el.title}>
-                  {el.title}
-                </option>
-              ))}
-            </select>
-            <button className='button-add-deck'>Select this deck</button>
-          </form>
-        </div>
+      <div className="container-new-post">
+        {clearDeckTitles.length > 0 ? (
+          <div className="addDeckDiv">
+            <form name="addDeck" className="addDeck">
+              <select name="title" className="select-add-deck">
+                {clearDeckTitles.map((el) => (
+                  <option key={el.id} value={el.title}>
+                    {el.title}
+                  </option>
+                ))}
+              </select>
+              <button className="button-add-deck">Select this deck</button>
+            </form>
+          </div>
+        ) : (
+          <></>
+        )}
         <div className="createNewDeck">
-          <form name="createDeck" className='addDeck'>
+          <form name="createDeck" className="addDeck">
             <input
-              className='input-create-deck'
+              className="input-create-deck"
               type="text"
               name="title"
               placeholder="Enter deck title"
               required
             />
-            <button  className='button-add-deck'>Create new deck</button>
+            <button className="button-add-deck">Create new deck</button>
           </form>
           <span className="msg"> </span>
         </div>

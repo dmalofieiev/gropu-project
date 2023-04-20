@@ -11,11 +11,11 @@ module.exports = function Navbar({ userSession }) {
             </a>
           </li>
         ) : null}
-        <li className="navbar-li">
+        {/* <li className="navbar-li">
           <a href="#info" className="infoBtn">
             Info
           </a>
-        </li>
+        </li> */}
         {userSession?.user ? (
           <li className="navbar-li">
             <a href="/profile" className="greeting">

@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const { Deck, Card, DemoStatistic  } = require('../../../db/models');
+const { Deck, Card, DemoStatistic } = require('../../../db/models');
 
 router.delete('/:deckId', async (req, res) => {
   const { deckId } = req.params;
-  console.log(`Deleting ${ deckId }`)
   try {
     const deck = await Deck.findOne({ where: { id: deckId } });
     const stat = await DemoStatistic.findAll({ where: { deckId } });

@@ -5,7 +5,6 @@ addCard.addEventListener('submit', async (e) => {
   e.preventDefault();
   const data = new FormData(addCard);
   const { decktitle } = e.target.dataset;
-  console.log(decktitle);
   try {
     const response = await fetch(`/addNewCard/${decktitle}`, {
       method: 'POST',
@@ -17,22 +16,22 @@ addCard.addEventListener('submit', async (e) => {
     const result = await response.json();
     if (result.msg === 'New Card Added') {
       const newWord = `
-      <div class="wordCard">
-        <div class="enWord">
+      <div class="cardDiv">
+        <div class="engWord">
         ${result.clearCard.en}</div>
-        <div class="ruWord">
+        <div class="rusWord">
         ${result.clearCard.ru}</div>
-        <a href="/delete/${result.clearCard.id}" class="deleteBtn" data-deleteid=${result.clearCard.id}>X</a>
+        <a href="/delete/${result.clearCard.id}" class="deleteBtn deleteCard" data-deleteid=${result.clearCard.id}>❌</a>
       </div>
       `;
       allNewCard.insertAdjacentHTML('afterbegin', newWord);
+      document.querySelectorAll('input').forEach((el) => (el.value = ''));
     }
   } catch (error) {
     console.log(error);
   }
 });
 
-console.log(allNewCard);
 allNewCard.addEventListener('click', async (event) => {
   if (event.target.classList.contains('deleteBtn')) {
     event.preventDefault();

@@ -8,7 +8,6 @@ module.exports = function ViewDeck({
   deckTitle,
   deckId,
 }) {
-  console.log('clearCards: -------->', clearCards);
   return (
     <Layout userSession={userSession}>
       <div className="mainDeckDiv">
@@ -16,11 +15,7 @@ module.exports = function ViewDeck({
           Back to choose deck
         </a>
         <p className="deckTitle-ept">{deckTitle}</p>
-        {userSession?.userId === userDeckId ? (
-          <button className="delete-deck" id={deckId}>
-            DELETE DECK
-          </button>
-        ) : null}
+
         <div className="container-choose">
           {clearCards?.map((el) => (
             <div className="cardDiv" key={el.id}>
@@ -44,6 +39,11 @@ module.exports = function ViewDeck({
             </div>
           ))}
         </div>
+        {userSession?.userId === userDeckId ? (
+          <a className="delete-deck backToDeck" href="#" id={deckId}>
+            DELETE DECK
+          </a>
+        ) : null}
       </div>
       <script src="/js/CardManagement/deleteInDeck.js" />
     </Layout>
