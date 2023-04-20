@@ -15,7 +15,7 @@ logForm.addEventListener('submit', async (e) => {
     const result = await response.json();
     if (result.userName) {
       setTimeout(() => {
-        window.location = '/';
+        window.location = '/game';
       }, 1000);
       userStatus.style.visibility = 'visible';
       userStatus.innerText = result.msg;

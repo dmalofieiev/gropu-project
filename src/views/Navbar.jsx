@@ -24,9 +24,9 @@ module.exports = function Navbar({ userName }) {
           </a>
         </li>
         <li>
-          <button type="button" className="logoutBtn">
+          <a className="logoutBtn" href="/login/logout">
             Logout
-          </button>
+          </a>
         </li>
       </ul>
     </nav>
