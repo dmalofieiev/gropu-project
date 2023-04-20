@@ -13,7 +13,6 @@ const isAuth = require('./src/middlewares/isAuth');
 const deckGame = require('./src/routes/game.routes');
 
 // Require route
-const secMainRoute = require('./src/routes/secMain.route');
 const registerRouter = require('./src/routes/register.routes');
 const loginRouter = require('./src/routes/login.routes');
 const profileRouter = require('./src/routes/profile.router');
@@ -58,8 +57,6 @@ app.use('/view', viewDeckRoute);
 app.use('/create', newDeckRoute);
 app.use('/addNewCard', newCardAddRoute);
 app.use('/delete/newcard', deleteNewWordRoute);
-
-app.use('/', secMainRoute);
 
 app.get('*', (req, res) => {
   res.redirect('/game');

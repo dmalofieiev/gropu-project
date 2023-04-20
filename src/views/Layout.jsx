@@ -1,7 +1,7 @@
 const React = require('react');
 const Navbar = require('./Navbar');
 
-module.exports = function Layout({ children }) {
+module.exports = function Layout({ children, userSession }) {
   return (
     <html lang="en">
       <head>
@@ -11,8 +11,9 @@ module.exports = function Layout({ children }) {
         <link rel="stylesheet" href="/css/styles.css" />
         <link rel="stylesheet" href="/css/logreg.css" />
         <link rel="stylesheet" href="/css/game.css" />
+        <link rel="stylesheet" href="/css/profile.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link
           href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital@0;1&display=swap"
           rel="stylesheet"
@@ -20,7 +21,7 @@ module.exports = function Layout({ children }) {
         <title>Words</title>
       </head>
       <body>
-        <Navbar />
+        <Navbar userSession={userSession}/>
         {children}
       </body>
     </html>

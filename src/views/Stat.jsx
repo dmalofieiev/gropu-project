@@ -5,9 +5,9 @@ module.exports = function Stat({ userStat }) {
     <section className="statistic">
       <ul className="progressList">
         {userStat.map((el) => (
-          <li key={el.id}>
-            <label htmlFor={`progress${el.id}`}>
-              {el.title}
+          <li className='stat-li' key={el.id}>
+            <label className='stat-label'  htmlFor={`progress${el.id}`}>
+              <p className='stat-p'>{el.title}</p>
               <progress
                 id={`progress${el.id}`}
                 className="progress"

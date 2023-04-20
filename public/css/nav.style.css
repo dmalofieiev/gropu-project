@@ -4,35 +4,30 @@
   box-sizing: border-box;
 }
 
-li {
-  display: inline;
-
-}
-
 .navbarContainer {
   display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  justify-content: space-between;
   border-bottom: 1px solid rgb(206, 146, 181);
   box-shadow: 0 4px 20px -4px rgba(196, 62, 140, 0.8);
   margin-bottom: 20px;
 }
-
-li a {
-  float: left;
+.navbarList {
+  display: flex;
 }
-
-li a,
-li button {
+.navbar-li {
+  list-style-type: none;
+}
+.navbar-li a,
+.navbar-li button {
   display: block;
   color: #7b2cbf;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-size: 20px;
 }
 
-li button {
+.navbar-li button {
   background: none;
   border: none;
   font: inherit;
@@ -41,8 +36,9 @@ li button {
   float: right;
 }
 
-li a:hover,
-li button:hover {
-  background-color: #7b2cbf;
-  color: #ff9e00;
+.navbar-li a:hover,
+.navbar-li button:hover {
+  background-color: rgb(218, 58, 191);
+  box-shadow: 0 4px 25px rgba(196, 62, 140, 0.8);
+  color: aliceblue;
 }

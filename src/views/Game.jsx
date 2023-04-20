@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Game() {
+module.exports = function Game({ userSession }) {
   return (
-    <Layout>
+    <Layout userSession={userSession}>
       <script defer src="/js/game.js" />
       <div className="container-game">
         <div className="perspective">

@@ -1,6 +1,6 @@
 .container-game {
   width: 100%;
-  perspective: 1000px;
+  perspective: 3000px;
 }
 .perspective {
   position: relative;

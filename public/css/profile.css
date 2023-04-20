@@ -1,0 +1,113 @@
+.profile {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.deck-stat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.deck-button {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  width: 100px;
+  background-color: rgb(124, 55, 156);
+  color: aliceblue;
+  font-size: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(124, 55, 156, 0.7);
+  cursor: pointer;
+  transform: scale(1);
+  transition: ease 1s;
+  text-decoration: none;
+}
+.deck-button:hover {
+  transform: scale(1.1);
+  transition: ease 1s;
+}
+
+.statistic {
+  width: 80vw;
+  margin-top: 50px;
+}
+.stat-li {
+  list-style-type: none;
+  font-size: 20px;
+}
+.stat-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.stat-p {
+  width: 30%;
+  margin-right: 10px;
+}
+.progress {
+  width: 60%;
+  background-color: rgb(114, 60, 105);
+  border-radius: 10px;
+}
+progress::-webkit-progress-bar {
+  background-color: rgb(170, 131, 164);
+  border-radius: 10px;
+}
+progress::-webkit-progress-value {
+  background-color: rgb(114, 60, 105);
+  border-radius: 10px;
+}
+.container-new-post {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.addDeckDiv {
+  width: 50vw;
+  display: flex;
+}
+.addDeck {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.select-add-deck {
+  background-color: transparent;
+  height: auto;
+  font-size: 18px;
+  height: 43px;
+  margin-right: 20px;
+  border-radius: 10px;
+  padding: 5px;
+}
+.select-add-deck option {
+  background-color: rgb(252, 222, 252);
+  padding: 5px;
+}
+.button-add-deck {
+  border: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  background-color: rgb(124, 55, 156);
+  color: aliceblue;
+  font-size: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(124, 55, 156, 0.7);
+  cursor: pointer;
+  transition: ease 1s;
+  text-decoration: none;
+}
+.button-add-deck:hover {
+  transform: scale(1.1);
+  transition: ease 1s;
+}
+.input-create-deck {
+  background-color: transparent;
+}
