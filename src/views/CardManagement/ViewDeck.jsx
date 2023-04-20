@@ -1,19 +1,28 @@
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function ViewDeck({ userSession, clearCards, userDeckId, deckTitle }) {
+module.exports = function ViewDeck({
+  userSession,
+  clearCards,
+  userDeckId,
+  deckTitle,
+  deckId,
+}) {
+  console.log('clearCards: -------->', clearCards);
   return (
     <Layout userSession={userSession}>
       <div className="mainDeckDiv">
         <a href="/deck" className="backToDeck">
           Back to choose deck
         </a>
-        <p className='deckTitle-ept'>{deckTitle}</p>
-        { userSession?.userId === userDeckId ? 
-        (<button className='delete-deck' id={clearCards[0].deckId}>DELETE DECK</button>): null
-        }
-        <div className='container-choose'>
-          {clearCards.map((el) => (
+        <p className="deckTitle-ept">{deckTitle}</p>
+        {userSession?.userId === userDeckId ? (
+          <button className="delete-deck" id={deckId}>
+            DELETE DECK
+          </button>
+        ) : null}
+        <div className="container-choose">
+          {clearCards?.map((el) => (
             <div className="cardDiv" key={el.id}>
               <div className="engWord" id={el.id}>
                 {el.en}

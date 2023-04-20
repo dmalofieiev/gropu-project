@@ -11,7 +11,12 @@ router.get('/:deckTitle', async (req, res) => {
     const userDeckId = deck.dataValues.userId;
     const cards = await Card.findAll({ where: { deckId } });
     const clearCards = cards.map((el) => el.get({ plain: true }));
-    renderTemplate(ViewDeck, { clearCards, userDeckId, deckTitle }, res, req);
+    renderTemplate(
+      ViewDeck,
+      { clearCards, userDeckId, deckTitle, deckId },
+      res,
+      req
+    );
   } catch (error) {
     console.log(error);
   }
