@@ -51,7 +51,7 @@ app.use(dbCheck);
 
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
-app.use('/game', deckGame);
+app.use('/',isAuth, deckGame);
 app.use('/profile', profileRouter);
 app.use('/deck', allDeckRouter);
 app.use('/view', viewDeckRoute);
@@ -60,6 +60,10 @@ app.use('/addNewCard', newCardAddRoute);
 app.use('/delete/newcard', deleteNewWordRoute);
 
 app.use('/', secMainRoute);
+
+app.get('*', (req, res) => {
+  res.redirect('/game');
+})
 
 app.listen(PORT, () => {
   console.log('Server started');

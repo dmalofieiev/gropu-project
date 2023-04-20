@@ -8,7 +8,7 @@ router.get('/:deckTitle', async (req, res) => {
   try {
     const deck = await Deck.findOne({ where: { title: deckTitle } });
     const deckId = deck.dataValues.id;
-    const userDeckId = req.session.userId;
+    const userDeckId = deck.dataValues.userId;
     console.log(userDeckId);
     console.log(req.session.userId);
     const cards = await Card.findAll({ where: { deckId } });

@@ -5,11 +5,11 @@ const { Deck, Card, DemoStatistic } = require('../../db/models');
 const Game = require('../views/Game');
 
 // * Пропсы передаются в ручках в момент вызова рендер-шаблона
-router.get('/', async (req, res) => {
+router.get('/game', async (req, res) => {
   renderTemplate(Game, {}, res, req);
 });
 
-router.get('/deck', async (req, res) => {
+router.get('/game/deck', async (req, res) => {
   try {
     const deckGame = await Deck.findAll({ raw: true });
     res.json(deckGame);
@@ -17,7 +17,7 @@ router.get('/deck', async (req, res) => {
     console.log(err);
   }
 });
-router.get('/card/:id', async (req, res) => {
+router.get('/game/card/:id', async (req, res) => {
   const { id } = req.params;
   try {
     const deckCard = await Card.findAll({ where: { deckId: id }, raw: true });
@@ -28,7 +28,7 @@ router.get('/card/:id', async (req, res) => {
   }
 });
 
-router.post('/status', async (req, res) => {
+router.post('/game/status', async (req, res) => {
   const { deckId, cardId } = req.body;
   try {
     await DemoStatistic.create({ userId: req.session.userId, cardId, deckId });
