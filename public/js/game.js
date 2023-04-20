@@ -29,7 +29,6 @@ containerDeck.addEventListener('click', async (e) => {
     try {
       const response = await fetch(`/game/card/${deckId}`);
       const result = await response.json();
-      console.log(result);
       const arrCard = [];
       result.deckCard.forEach((el) => {
         const divContainer = document.createElement('div');
@@ -75,13 +74,13 @@ containerDeck.addEventListener('click', async (e) => {
         const button = document.createElement('button');
         button.className = 'button-game-finish';
         button.innerText = 'BACK TO THE CATEGORIES';
-        button.onclick = () => { 
+        button.onclick = () => {
           perspective.classList.remove('rotate');
           button.remove();
           containerDeck.style.pointerEvents = 'auto';
         };
         perspective.append(button);
-      }, 600)
+      }, 600);
     } catch (err) {
       console.log(err);
     }
@@ -97,16 +96,14 @@ containerCard.addEventListener('click', async (event) => {
       event.target.src = '/assets/123.svg';
       const { deckId } = event.target.dataset;
       const { cardId } = event.target.dataset;
-      console.log(cardId, deckId);
       try {
         const response = await fetch('/game/status', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ deckId, cardId }),
         });
-        console.log(response)
-      } catch (e) {
-        console.log(e);
+      } catch (error) {
+        console.log(error);
       }
     }
   }

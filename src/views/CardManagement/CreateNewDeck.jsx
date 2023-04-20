@@ -10,7 +10,10 @@ module.exports = function CreateNewDeck({
     <Layout userSession={userSession}>
       <div className="container-add-new-desk">
         <div className="container-add-new-desk-flex">
-          <p className="name-new-desk">
+          <a href="/deck" className="backToDeck">
+            Back to choose deck
+          </a>
+          <p className="name-new-desk deckTitle-ept">
             Your deck {}
             {deckTitle}
           </p>
@@ -35,16 +38,16 @@ module.exports = function CreateNewDeck({
           </form>
           <div className="allNewCard">
             {clearCards?.map((el) => (
-              <div className="wordCard">
-                <div className="enWord">{el.en}</div>
-                <div className="ruWord">{el.ru}</div>
+              <div className="cardDiv">
+                <div className="engWord">{el.en}</div>
+                <div className="rusWord">{el.ru}</div>
                 <a
                   href={`/delete/newcard/${el.id}`}
-                  className="deleteBtn"
+                  className="deleteBtn deleteCard"
                   data-deleteid={el.id}
                 >
                   {' '}
-                  X
+                  ❌
                 </a>
               </div>
             ))}

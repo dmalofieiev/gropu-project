@@ -5,9 +5,12 @@ module.exports = function Stat({ userStat }) {
     <section className="statistic">
       <ul className="progressList">
         {userStat.map((el) => (
-          <li className='stat-li' key={el.id}>
-            <label className='stat-label'  htmlFor={`progress${el.id}`}>
-              <p className='stat-p'>{el.title}</p>
+          <li className="stat-li" key={el.id}>
+            <label className="stat-label" htmlFor={`progress${el.id}`}>
+              <p className="stat-p">{el.title}</p>
+              <p className="from">
+                {el.trueCardCount.length}/{el.cardCount.length}
+              </p>
               <progress
                 id={`progress${el.id}`}
                 className="progress"

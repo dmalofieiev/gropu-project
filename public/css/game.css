@@ -21,6 +21,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   backface-visibility: hidden;
+  margin-bottom: 50px;
 }
 .container-card {
   margin-top: 100px;
