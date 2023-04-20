@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   const { userId } = req.session;
   try {
     const deckTitles = await Deck.findAll({
-      where: { userId: [userId, 1] },
+      where: { userId: [userId] },
     });
     const clearDeckTitles = deckTitles.map((deck) => deck.get({ plain: true }));
     renderTemplate(Profile, { clearDeckTitles }, res, req);
