@@ -11,6 +11,12 @@ module.exports = function Layout({ children }) {
         <link rel="stylesheet" href="/css/styles.css" />
         <link rel="stylesheet" href="/css/logreg.css" />
         <link rel="stylesheet" href="/css/game.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital@0;1&display=swap"
+          rel="stylesheet"
+        />
         <title>Words</title>
       </head>
       <body>

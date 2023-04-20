@@ -1,9 +1,8 @@
 .container-game {
-  height: 100%;
   width: 100%;
-  perspective: 2000px;
+  perspective: 1000px;
 }
-.perspective{
+.perspective {
   position: relative;
   display: flex;
   justify-content: center;
@@ -19,7 +18,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   backface-visibility: hidden;
-  background-color: aquamarine;
+  background-color: rgb(242, 227, 248);
 }
 .container-card {
   display: flex;
@@ -28,38 +27,43 @@
   backface-visibility: hidden;
   position: absolute;
   top: 0px;
-  left: 0px; 
+  left: 0px;
   z-index: -1;
   transform: rotateY(180deg);
+  background-color: rgb(248, 227, 248);
 }
 .deck-theme {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20vw;
-  height: 400px;
+  width: 22vw;
+  height: 250px;
   background-color: rgb(124, 55, 156);
   color: aliceblue;
   font-size: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0px 15px 5px rgba(124, 55, 156, 0.8);
   cursor: pointer;
   transform: scale(1);
   transition: ease 1s;
+  margin-top: 30px;
 }
 .deck-theme:hover {
   transform: scale(1.1);
   transition: ease 1s;
-  background-color: rgb(172, 65, 154);
+  font-size: 23px;
+  letter-spacing: 2px;
 }
 
 .word-container {
   perspective: 2000px;
+  margin-top: 20px;
 }
 .word-perspective {
   transform-style: preserve-3d;
   transition-duration: 1s;
   position: relative;
+  margin-top: 20px;
 }
 .card-theme-en {
   position: relative;
@@ -71,8 +75,8 @@
   background-color: rgb(124, 55, 156);
   color: aliceblue;
   font-size: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(124, 55, 156, 0.7);
   cursor: pointer;
   transform: scale(1);
   transition: ease 1s;
@@ -81,7 +85,6 @@
 .card-theme-en:hover {
   transform: scale(1.1);
   transition: ease 1s;
-  background-color: rgb(172, 65, 154);
 }
 .card-theme-ru {
   display: flex;
@@ -89,29 +92,29 @@
   justify-content: center;
   width: 20vw;
   height: 130px;
-  background-color: rgb(92, 138, 182);
+  background-color: rgb(218, 58, 191);
   color: aliceblue;
   font-size: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.7);
   backface-visibility: hidden;
   position: absolute;
   top: 0px;
-  left: 0px; 
+  left: 0px;
   z-index: -1;
   transform: rotateY(180deg);
   padding: 0px;
   margin: 0px;
 }
 .word-stat {
-  bottom: 0px;
-  right: 18px;
-  border-radius: 50%;
-  background-color: red;
+  bottom: 10px;
+  right: 10px;
   position: absolute;
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  filter: hue-rotate(0deg);
 }
 .word-status-true {
-  background-color: green;
+}
+p, div {
+  font-family: 'Schibsted Grotesk', sans-serif;
 }
