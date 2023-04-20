@@ -24,6 +24,7 @@ addDeck();
 
 containerDeck.addEventListener('click', async (e) => {
   if (e.target.classList.contains('deck-theme')) {
+    containerCard.innerHTML = '';
     const { deckId } = e.target.dataset;
     try {
       const response = await fetch(`/game/card/${deckId}`);
@@ -45,8 +46,8 @@ containerDeck.addEventListener('click', async (e) => {
         if (status) {
           pStatys.className = 'word-stat  word-status-true';
           pStatys1.className = 'word-stat word-status word-status-true';
-          pStatys1.src = '/assets/check-mark.svg';
-          pStatys.src = '/assets/check-mark.svg';
+          pStatys1.src = '/assets/123.svg';
+          pStatys.src = '/assets/123.svg';
         }
         const enDiv = document.createElement('p');
         enDiv.className = 'card-theme-en';
@@ -67,8 +68,20 @@ containerDeck.addEventListener('click', async (e) => {
         arrCard.push(divContainer);
       });
       containerCard.append(...arrCard);
-      perspective.style.transform = 'rotateY(180deg)';
+      perspective.classList.add('rotate');
+      containerDeck.style.pointerEvents = 'none';
       containerCard.style.zIndex = 1;
+      setTimeout(() => {
+        const button = document.createElement('button');
+        button.className = 'button-game-finish';
+        button.innerText = 'BACK TO THE CATEGORIES';
+        button.onclick = () => { 
+          perspective.classList.remove('rotate');
+          button.remove();
+          containerDeck.style.pointerEvents = 'auto';
+        };
+        perspective.append(button);
+      }, 600)
     } catch (err) {
       console.log(err);
     }
@@ -81,7 +94,7 @@ containerCard.addEventListener('click', async (event) => {
   if (event.target.classList.contains('word-status')) {
     if (!event.target.classList.contains('word-status-true')) {
       event.target.classList.add('word-status-true');
-      event.target.src = '/assets/check-mark.svg';
+      event.target.src = '/assets/123.svg';
       const { deckId } = event.target.dataset;
       const { cardId } = event.target.dataset;
       console.log(cardId, deckId);

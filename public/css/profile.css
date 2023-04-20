@@ -68,7 +68,6 @@ progress::-webkit-progress-value {
 }
 
 .addDeckDiv {
-  width: 50vw;
   display: flex;
 }
 .addDeck {
@@ -109,5 +108,146 @@ progress::-webkit-progress-value {
   transition: ease 1s;
 }
 .input-create-deck {
+  border: none;
+  box-shadow: 0 5px 16px -4px rgba(196, 62, 140, 0.8);
   background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 15px;
+  outline: none;
+  color: black;
+  width: 208px;
+  margin-right: 20px;
+}
+.container-add-new-desk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.container-add-new-desk-flex {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.name-new-desk {
+  color: #7b2cbf;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.container-add-new-desk input {
+  border: none;
+  box-shadow: 0 5px 16px -4px rgba(196, 62, 140, 0.8);
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 15px;
+  outline: none;
+  color: black;
+  width: 208px;
+  margin-right: 20px;
+}
+.add-newCard {
+  border: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  background-color: rgb(124, 55, 156);
+  color: aliceblue;
+  font-size: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(124, 55, 156, 0.7);
+  cursor: pointer;
+  transition: ease 1s;
+  text-decoration: none;
+}
+.add-newCard:hover {
+  transform: scale(1.1);
+  transition: ease 1s;
+}
+.form-add-elem {
+  display: flex;
+}
+.allNewCard {
+  margin-top: 30px;
+}
+.allNewCard{
+  width: 100%;
+  border: 1px solid rgb(124, 55, 156);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.wordCard {
+  display: flex;
+  width: 100%;
+}
+.enWord {
+  width: 40%;
+  border: 1px solid rgb(124, 55, 156);
+  padding-left: 10px;
+}
+.ruWord {
+  width: 40%;
+  border: 1px solid rgb(124, 55, 156);
+  padding-left: 10px;
+}
+.deleteBtn {
+  width: 20%;
+  border: 1px solid rgb(124, 55, 156);
+  padding-left: 10px;
+  text-decoration: none;
+}
+.cardDiv {
+  display: flex;
+}
+.container-choose {
+  border-radius: 10px;
+  width: 50vw;
+  border: 1px solid rgb(124, 55, 156);
+  overflow: hidden;
+  margin-top: 30px;
+}
+.engWord {
+  width: 22vw;
+  border: 1px solid rgb(124, 55, 156);
+  overflow: hidden;
+  padding-left: 5px;
+}
+.rusWord {
+  width: 23vw;
+  padding-left: 5px;
+  border: 1px solid rgb(124, 55, 156);
+}
+.deleteCard {
+  width: 5vw;
+  border: 1px solid rgb(124, 55, 156);
+  text-decoration: none;
+}
+
+.mainDeckDiv {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.backToDeck {
+  text-decoration: none;
+  color: #7b2cbf;
+  background-color: rgb(124, 55, 156);
+  color: aliceblue;
+  font-size: 20px;
+  width: 230px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(124, 55, 156, 0.7);
+  padding: 10px 16px;
+}
+
+.deckTitle-ept{
+  margin-top: 50px;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }

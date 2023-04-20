@@ -11,6 +11,9 @@
   transform-style: preserve-3d;
   transition-duration: 2s;
 }
+.rotate {
+  transform: rotateY(180deg);
+}
 .container-deck {
   position: relative;
   top: 0px;
@@ -18,9 +21,9 @@
   flex-wrap: wrap;
   justify-content: space-around;
   backface-visibility: hidden;
-  background-color: rgb(242, 227, 248);
 }
 .container-card {
+  margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -30,7 +33,6 @@
   left: 0px;
   z-index: -1;
   transform: rotateY(180deg);
-  background-color: rgb(248, 227, 248);
 }
 .deck-theme {
   display: flex;
@@ -42,7 +44,8 @@
   color: aliceblue;
   font-size: 20px;
   border-radius: 10px;
-  box-shadow: 0 0px 15px 5px rgba(124, 55, 156, 0.8);
+  font-weight: 600;
+  box-shadow: 0 0px 15px 5px rgba(124, 55, 156, 0.5);
   cursor: pointer;
   transform: scale(1);
   transition: ease 1s;
@@ -51,12 +54,10 @@
 .deck-theme:hover {
   transform: scale(1.1);
   transition: ease 1s;
-  font-size: 23px;
-  letter-spacing: 2px;
 }
 
 .word-container {
-  perspective: 2000px;
+  perspective: 500px;
   margin-top: 20px;
 }
 .word-perspective {
@@ -96,7 +97,7 @@
   color: aliceblue;
   font-size: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 15px 5px rgba(182, 80, 139, 0.3);
   backface-visibility: hidden;
   position: absolute;
   top: 0px;
@@ -113,5 +114,55 @@
   height: 30px;
   filter: hue-rotate(0deg);
 }
-.word-status-true {
+.button-game-finish {
+  position: fixed;
+  top: 0px;
+  transform: rotateY(180deg);
+  padding: 18px 20px;
+  background-color: rgb(231, 93, 197);
+  color: rgb(233, 245, 244);
+  font-size: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0px 15px 5px rgba(218, 128, 213, 0.2);
+  cursor: pointer;
+  transition: ease 1s;
+  margin-top: 30px;
+  border: 0px;
+}
+.button-game-finish:hover {
+  transition: ease 1s;
+  box-shadow: 0 0px 15px 5px rgba(218, 128, 213, 0.7);
+}
+@media (max-width: 900.98px) {
+  .deck-theme {
+    width: 31vw;
+  }
+  .card-theme-en {
+    width: 30vw;
+  }
+  .card-theme-ru {
+    width: 30vw;
+  }
+}
+@media (max-width: 700.98px) {
+  .deck-theme {
+    width: 41vw;
+  }
+  .card-theme-en {
+    width: 41vw;
+  }
+  .card-theme-ru {
+    width: 41vw;
+  }
+}
+@media (max-width: 500px) {
+  .deck-theme {
+    width: 81vw;
+  }
+  .card-theme-en {
+    width: 81vw;
+  }
+  .card-theme-ru {
+    width: 81vw;
+  }
 }

@@ -5,7 +5,6 @@ const Profile = require('../../views/CardManagement/AllCards');
 
 router.get('/', async (req, res) => {
   const { userId } = req.session;
-  console.log(userId);
   try {
     const deckTitles = await Deck.findAll({
       where: { userId: [userId, 1] },

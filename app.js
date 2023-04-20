@@ -21,6 +21,7 @@ const viewDeckRoute = require('./src/routes/CardManagement/deckView.route');
 const newDeckRoute = require('./src/routes/CardManagement/newDeck.route');
 const newCardAddRoute = require('./src/routes/CardManagement/newCardAdd.route');
 const deleteNewWordRoute = require('./src/routes/CardManagement/deleteNewword.route');
+const deleteDeckRoute = require('./src/routes/CardManagement/deleteDeck.route'); 
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -50,13 +51,14 @@ app.use(dbCheck);
 
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
-app.use('/',isAuth, deckGame);
-app.use('/profile', profileRouter);
-app.use('/deck', allDeckRouter);
-app.use('/view', viewDeckRoute);
-app.use('/create', newDeckRoute);
-app.use('/addNewCard', newCardAddRoute);
-app.use('/delete/newcard', deleteNewWordRoute);
+app.use('/', isAuth, deckGame);
+app.use('/profile', isAuth, profileRouter);
+app.use('/deck', isAuth, allDeckRouter);
+app.use('/view', isAuth, viewDeckRoute);
+app.use('/create', isAuth, newDeckRoute);
+app.use('/addNewCard', isAuth, newCardAddRoute);
+app.use('/delete/newcard', isAuth, deleteNewWordRoute);
+app.use('/delete/newdeck', isAuth, deleteDeckRoute);
 
 app.get('*', (req, res) => {
   res.redirect('/game');

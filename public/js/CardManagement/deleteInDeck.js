@@ -18,3 +18,15 @@ mainDeckDiv.addEventListener('click', async (event) => {
     }
   }
 });
+
+document.querySelector('.delete-deck').addEventListener('click', async (e) => {
+  const deckId = e.target.id;
+  try {
+    await fetch(`/delete/newdeck/${deckId}`, {
+      method: 'Delete',
+    });
+    window.location = '/deck';
+  } catch (error) {
+    console.log(error);
+  }
+})

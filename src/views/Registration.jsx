@@ -7,11 +7,11 @@ module.exports = function Register(props) {
       <div className="registerDiv reglogDiv">
         <form name="registerForm">
           <p className="label">User Name:</p>
-          <input name="userName" type="text" placeholder="User name" />
+          <input name="userName" type="text" placeholder="User name" required />
           <p className="label">Email:</p>
-          <input name="email" type="email" placeholder="Email" />
+          <input name="email" type="email" placeholder="Email" required />
           <p className="label">Password:</p>
-          <input name="password" type="password" placeholder="Password" />
+          <input name="password" type="password" placeholder="Password" required />
           <br />
           <button className="logregBtn regBtn" type="submit">
             Sing up
