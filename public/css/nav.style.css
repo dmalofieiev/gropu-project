@@ -42,3 +42,7 @@
   box-shadow: 0 4px 25px rgba(196, 62, 140, 0.8);
   color: aliceblue;
 }
+
+.logRegBtnDiv {
+  display: flex;
+}
