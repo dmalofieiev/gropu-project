@@ -16,6 +16,12 @@ const deckGame = require('./src/routes/game.routes');
 const secMainRoute = require('./src/routes/secMain.route');
 const registerRouter = require('./src/routes/register.routes');
 const loginRouter = require('./src/routes/login.routes');
+const profileRouter = require('./src/routes/profile.router');
+const allDeckRouter = require('./src/routes/CardManagement/allDeck.route');
+const viewDeckRoute = require('./src/routes/CardManagement/deckView.route');
+const newDeckRoute = require('./src/routes/CardManagement/newDeck.route');
+const newCardAddRoute = require('./src/routes/CardManagement/newCardAdd.route');
+const deleteNewWordRoute = require('./src/routes/CardManagement/deleteNewword.route');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -43,11 +49,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(dbCheck);
 
-
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/game', deckGame);
-
+app.use('/profile', profileRouter);
+app.use('/deck', allDeckRouter);
+app.use('/view', viewDeckRoute);
+app.use('/create', newDeckRoute);
+app.use('/addNewCard', newCardAddRoute);
+app.use('/delete/newcard', deleteNewWordRoute);
 
 app.use('/', secMainRoute);
 
