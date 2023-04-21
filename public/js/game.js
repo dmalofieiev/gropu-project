@@ -119,45 +119,60 @@ containerCard.addEventListener('click', async (event) => {
 });
 containerCard.addEventListener('mouseover', async (event) => {
   if (event.target.classList.contains('word-info')) {
-    const word = event.target.id;
+    document.querySelectorAll('.div-info-block').forEach((el) => el.remove());
+
     const clientY = event.clientY;
-    try {
-      const response = await fetch(
-        `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
-      );
-      const result = await response.json();
-      const divInfo = document.createElement('div');
-      const arrInfo = new Array(3).fill('');
-      const ResArr = [];
-      arrInfo.forEach((el, index) => {
-        const newEl = document.createElement('p');
-        if (index === 0) {
-          newEl.innerText = `Part of speech: ${result[0].meanings[0].partOfSpeech}` ;
-          ResArr.push(newEl);
+    const clientX = event.clientX;
+
+    setTimeout(async () => {
+      if (
+        clientY - 25 < event.clientY &&
+        clientY + 25 > event.clientY &&
+        clientX + 25 > event.clientX &&
+        clientX - 25 < event.clientX
+      ) {
+        const word = event.target.id;
+        try {
+          const response = await fetch(
+            `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+          );
+          const result = await response.json();
+          const divInfo = document.createElement('div');
+          const arrInfo = new Array(3).fill('');
+          const ResArr = [];
+          arrInfo.forEach((el, index) => {
+            const newEl = document.createElement('p');
+            if (index === 0) {
+              newEl.innerText = `Part of speech: ${result[0].meanings[0].partOfSpeech}`;
+              ResArr.push(newEl);
+            }
+            if (
+              index === 1 &&
+              result[0].meanings[0].definitions[0].definition
+            ) {
+              newEl.innerText = `Definition: ${result[0].meanings[0].definitions[0].definition}`;
+              ResArr.push(newEl);
+            }
+            if (index === 2 && result[0].meanings[0].definitions[0].example) {
+              newEl.innerText = `Example: ${result[0].meanings[0].definitions[0].example}`;
+              ResArr.push(newEl);
+            }
+          });
+          divInfo.append(...ResArr);
+          divInfo.className = 'div-info-block';
+          divInfo.style.top = `${clientY - 150}px`;
+          const windowInnerWidth = document.documentElement.clientWidth;
+          if (windowInnerWidth < 700) {
+            divInfo.style.top = `${clientY - 200}px`;
+          }
+          document.body.append(divInfo);
+          event.target.addEventListener('mouseleave', () => {
+            divInfo.remove();
+          });
+        } catch (error) {
+          console.log(error);
         }
-        if (index === 1 && result[0].meanings[0].definitions[0].definition) {
-          newEl.innerText =`Definition: ${result[0].meanings[0].definitions[0].definition}` ;
-          ResArr.push(newEl);
-        }
-        if (index === 2 && result[0].meanings[0].definitions[0].example) {
-          newEl.innerText =`Example: ${result[0].meanings[0].definitions[0].example}`;
-          ResArr.push(newEl);
-        }
-      });
-      divInfo.append(...ResArr);
-      console.log(divInfo)
-      divInfo.className = "div-info-block";
-      divInfo.style.top = `${clientY - 150}px`;
-      const windowInnerWidth = document.documentElement.clientWidth
-      if (windowInnerWidth < 700) {
-        divInfo.style.top = `${clientY - 200}px`;
-      } 
-      document.body.append(divInfo);
-      event.target.addEventListener("mouseleave", () => {
-        divInfo.remove();
-      });
-    } catch (error) {
-      console.log(error);
-    }
+      }
+    }, 300);
   }
 });
