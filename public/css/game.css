@@ -72,7 +72,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20vw;
+  width: 22vw;
   height: 130px;
   background-color: rgb(124, 55, 156);
   color: aliceblue;
@@ -92,7 +92,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20vw;
+  width: 22vw;
   height: 130px;
   background-color: rgb(218, 58, 191);
   color: aliceblue;
@@ -134,7 +134,7 @@
   transition: ease 1s;
   box-shadow: 0 0px 15px 5px rgba(218, 128, 213, 0.7);
 }
-@media (max-width: 900.98px) {
+@media (max-width: 1200.98px) {
   .deck-theme {
     width: 31vw;
   }
@@ -145,7 +145,7 @@
     width: 30vw;
   }
 }
-@media (max-width: 700.98px) {
+@media (max-width: 850.98px) {
   .deck-theme {
     width: 41vw;
   }
@@ -171,7 +171,7 @@
   position: absolute;
   background-color: rgba(146, 72, 115, 1);
   color: aliceblue;
-  z-index: 6;
+  z-index: 7;
   width: 80vw;
   left: 0;
   right: 0;
