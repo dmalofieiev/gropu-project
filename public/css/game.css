@@ -78,14 +78,14 @@
   color: aliceblue;
   font-size: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(124, 55, 156, 0.7);
+  box-shadow: 0 0 10px rgba(124, 55, 156, 0.3);
   cursor: pointer;
   transform: scale(1);
   transition: ease 1s;
   backface-visibility: hidden;
 }
 .card-theme-en:hover {
-  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(102, 37, 133, 0.9);
   transition: ease 1s;
 }
 .card-theme-ru {
@@ -166,4 +166,16 @@
   .card-theme-ru {
     width: 81vw;
   }
+}
+.div-info-block {
+  position: absolute;
+  background-color: rgba(146, 72, 115, 1);
+  color: aliceblue;
+  z-index: 6;
+  width: 80vw;
+  left: 0;
+  right: 0;
+  margin: auto; 
+  padding: 20px;
+  border-radius: 10px;
 }

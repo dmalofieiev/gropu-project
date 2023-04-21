@@ -42,6 +42,13 @@ containerDeck.addEventListener('click', async (e) => {
         pStatys.src = '/assets/question.svg';
         pStatys.className = 'word-stat';
         pStatys1.className = 'word-stat word-status';
+        const pInfo = document.createElement('img');
+        pInfo.className = 'word-info';
+        pInfo.id = `${el.en}`;
+        pInfo.style.position = 'absolute';
+        pInfo.style.top = '10px';
+        pInfo.style.right = '10px';
+        pInfo.src = '/assets/info.svg';
         if (status) {
           pStatys.className = 'word-stat  word-status-true';
           pStatys1.className = 'word-stat word-status word-status-true';
@@ -59,6 +66,7 @@ containerDeck.addEventListener('click', async (e) => {
         pStatys1.style.cursor = 'pointer';
         ruDiv.innerText = el.ru;
         ruDiv.dataset.deckId = el.id;
+        enDiv.append(pInfo);
         enDiv.append(pStatys);
         ruDiv.append(pStatys1);
         divPerspective.append(enDiv);
@@ -86,6 +94,7 @@ containerDeck.addEventListener('click', async (e) => {
     }
   }
 });
+
 containerCard.addEventListener('click', async (event) => {
   if (event.target.classList.contains('card-theme-en')) {
     event.target.parentNode.style.transform = 'rotateY(180deg)';
@@ -105,6 +114,50 @@ containerCard.addEventListener('click', async (event) => {
       } catch (error) {
         console.log(error);
       }
+    }
+  }
+});
+containerCard.addEventListener('mouseover', async (event) => {
+  if (event.target.classList.contains('word-info')) {
+    const word = event.target.id;
+    const clientY = event.clientY;
+    try {
+      const response = await fetch(
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+      );
+      const result = await response.json();
+      const divInfo = document.createElement('div');
+      const arrInfo = new Array(3).fill('');
+      const ResArr = [];
+      arrInfo.forEach((el, index) => {
+        const newEl = document.createElement('p');
+        if (index === 0) {
+          newEl.innerText = `Part of speech: ${result[0].meanings[0].partOfSpeech}` ;
+          ResArr.push(newEl);
+        }
+        if (index === 1 && result[0].meanings[0].definitions[0].definition) {
+          newEl.innerText =`Definition: ${result[0].meanings[0].definitions[0].definition}` ;
+          ResArr.push(newEl);
+        }
+        if (index === 2 && result[0].meanings[0].definitions[0].example) {
+          newEl.innerText =`Example: ${result[0].meanings[0].definitions[0].example}`;
+          ResArr.push(newEl);
+        }
+      });
+      divInfo.append(...ResArr);
+      console.log(divInfo)
+      divInfo.className = "div-info-block";
+      divInfo.style.top = `${clientY - 150}px`;
+      const windowInnerWidth = document.documentElement.clientWidth
+      if (windowInnerWidth < 700) {
+        divInfo.style.top = `${clientY - 200}px`;
+      } 
+      document.body.append(divInfo);
+      event.target.addEventListener("mouseleave", () => {
+        divInfo.remove();
+      });
+    } catch (error) {
+      console.log(error);
     }
   }
 });
